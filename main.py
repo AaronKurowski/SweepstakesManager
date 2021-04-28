@@ -6,6 +6,7 @@ from marketingfirm import MarketingFirm
 
 
 if __name__ == '__main__':
+    pass
     # manager = MarketingFirmCreator()
     # marketing_firm = manager.choose_manager_type()
     # sweepstake = marketing_firm.create_sweepstakes('test')

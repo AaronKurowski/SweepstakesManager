@@ -1,4 +1,4 @@
-from stack import Stack
+from data_stack import Stack
 
 
 class SweepstakesStackManager:
