@@ -1,4 +1,5 @@
 from queue import Queue
+import random
 
 
 class SweepstakesQueueManager:
@@ -6,7 +7,7 @@ class SweepstakesQueueManager:
         self.queue = Queue()
 
     def insert_sweepstakes(self, sweepstakes):
-        pass
+        self.queue.enqueue(sweepstakes)
 
     def get_sweepstakes(self):
-        pass
+        return self.queue.dequeue()

@@ -1,4 +1,5 @@
+from contestant import Contestant
 
 
 if __name__ == '__main__':
-    pass
+    contestant1 = Contestant()

@@ -6,7 +6,7 @@ class Contestant:
         self.reg_num = number
 
     def notify(self, is_winner):
-        pass
+        print(f"{is_winner.first_name} {is_winner.last_name} wins the sweepstakes!")
 
     # def get_contestant_info(self):
     #     self.first_name = input("What is your first name? >")
