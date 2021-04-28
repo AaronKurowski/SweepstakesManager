@@ -4,10 +4,10 @@ class Sweepstake:
         self.contestants = {}
 
     def register_contestant(self, contestant):
-        pass
+        self.contestants[contestant.reg_num] = contestant
 
     def pick_winner(self):
-        pass
+        return self.contestants.popitem()
 
     def print_contestant_info(self, contestant):
-        pass
+        contestant.display_contestant_info()

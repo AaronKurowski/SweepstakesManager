@@ -13,7 +13,4 @@ class Contestant:
     #     self.last_name = input("What is your last name? >")
     #     self.email = input("What is your email? >")
     #     self.reg_num = input("Enter registration number. >")
-    #
-    # def display_contestant_info(self):
-    #     output_text(f"First name: {self.first_name}\nLast name: {self.last_name}"
-    #                 f"\nEmail: {self.email}\nRegistration #: {self.reg_num}")
+
