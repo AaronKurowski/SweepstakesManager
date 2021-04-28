@@ -16,4 +16,4 @@ class Contestant:
         self.first_name = data[0]
         self.last_name = data[1]
         self.email = data[2]
-        self.reg_num = data[3]
+        self.reg_num = int(data[3])

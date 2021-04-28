@@ -1,3 +1,7 @@
+from user_interface import *
+import random
+
+
 class Sweepstake:
     def __init__(self, name):
         self.name = name
@@ -7,7 +11,8 @@ class Sweepstake:
         self.contestants[contestant.reg_num] = contestant
 
     def pick_winner(self):
-        return self.contestants.popitem()
+        random_key = random.choice(list(self.contestants))
+        return self.contestants[random_key]
 
     def print_contestant_info(self, contestant):
-        contestant.display_contestant_info()
+        display_contestant_info(contestant)
