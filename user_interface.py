@@ -3,7 +3,7 @@ def output_text(text):
 
 
 def continue_prompt():
-    continue_bool = input("All done? Continue to next step? (y/n)")
+    continue_bool = input("Add more? (y/n) >")
     return continue_bool
 
 
@@ -31,29 +31,6 @@ def manager_type_prompt():
     except:
         print("Type again")
 
-
-def menu_facade():
-    my_manager = MarketingFirmCreator().choose_manager_type()
-    """Create your sweepstakes"""
-    while True:
-        new_sweepstakes = my_manager.manager.create_sweepstakes()
-        my_manager.manager.insert_sweepstakes(new_sweepstakes)
-
-        while True:
-            contestant = Contestant()
-            contestant.fill_contestant_info()
-            new_sweepstakes.register_contestant(contestant)
-            print("contestant registered!")
-            add_more_contestants = continue_prompt()
-            if add_more_contestants.lower() == 'y' or 'yes':
-                continue
-            else:
-                break
-        add_another_sweepstakes = continue_prompt()
-        if add_another_sweepstakes.lower() == 'y' or 'yes':
-            continue
-        else:
-            break
 
 def get_sweepstakes_name():
     name = input("Name your sweepstakes >")
