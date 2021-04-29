@@ -1,5 +1,5 @@
 from marketingfirmcreator import MarketingFirmCreator
-from user_interface import continue_prompt, get_sweepstakes_name
+from user_interface import continue_prompt, get_sweepstakes_name, select_winner_prompt
 from contestant import Contestant
 
 
@@ -29,11 +29,17 @@ if __name__ == '__main__':
                 continue
             else:
                 break
-        
-        selected_sweepstakes = my_manager.manager.get_sweepstakes()
-        winner = selected_sweepstakes.pick_winner()
-        for key, value in selected_sweepstakes.contestants.items():
-            print(f"Sorry {value.first_name} {value.last_name} you didn't win this time.")
-        winner.notify(winner)
+
+        select_winner = select_winner_prompt()
+        while select_winner:
+            selected_sweepstakes = my_manager.manager.get_sweepstakes()
+            winner = selected_sweepstakes.pick_winner()
+            winner.notify(winner, selected_sweepstakes)
+            if selected_sweepstakes is None:
+                print("No more sweepstakes")
+                select_winner = False
+            else:
+                continue
+
 
     run_simulation()

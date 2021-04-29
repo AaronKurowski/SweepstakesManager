@@ -7,6 +7,14 @@ def continue_prompt():
     return continue_bool
 
 
+def select_winner_prompt():
+    select_the_winner = input("Select a winner for sweepstakes? (y/n) >")
+    if select_the_winner.lower() == 'y':
+        return True
+    else:
+        return False
+
+
 def contestant_info_prompt():
     first_name = input("Enter first name >")
     last_name = input("Enter last name >")
