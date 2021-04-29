@@ -8,9 +8,11 @@ class Sweepstake:
         self.contestants = {}
 
     def register_contestant(self, contestant):
+        """Sets registration number as key; contestant object set as value"""
         self.contestants[contestant.reg_num] = contestant
 
     def pick_winner(self):
+        """Generates a random key in self.contestants and returns object with that key"""
         random_key = random.choice(list(self.contestants))
         return self.contestants[random_key]
 

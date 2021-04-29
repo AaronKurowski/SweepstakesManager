@@ -1,5 +1,4 @@
 from sweepstake import Sweepstake
-from sweepstakesstackmanager import SweepstakesStackManager
 
 
 class MarketingFirm:

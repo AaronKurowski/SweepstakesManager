@@ -1,44 +1,36 @@
 from marketingfirmcreator import MarketingFirmCreator
-from contestant import Contestant
-from user_interface import *
-from sweepstakesstackmanager import SweepstakesStackManager
-from marketingfirm import MarketingFirm
 
 
 if __name__ == '__main__':
-    pass
-    # manager = MarketingFirmCreator()
-    # marketing_firm = manager.choose_manager_type()
-    # sweepstake = marketing_firm.create_sweepstakes('test')
-    # print(sweepstake.name)
-    # sweepstake.register_contestant()
+    # def run_simulation():
+        # my_manager = MarketingFirmCreator().choose_manager_type()
+        # my_new_sweepstakes = my_manager.create_sweepstakes("test123")
+        # my_new_sweepstakes2 = my_manager.create_sweepstakes("anothertest")
+        # my_new_sweepstakes3 = my_manager.create_sweepstakes("lasttest")
+        # my_manager.manager.insert_sweepstakes(my_new_sweepstakes)
+        # my_manager.manager.insert_sweepstakes(my_new_sweepstakes2)
+        # my_manager.manager.insert_sweepstakes(my_new_sweepstakes3)
+        #
+        # print(my_manager.manager.stack.stack[0].name)
+        # print(my_manager.manager.stack.stack[1].name)
+        # print(my_manager.manager.stack.stack[2].name)
+        #
+        # get_sweepstakes = my_manager.manager.get_sweepstakes()
+        # print(get_sweepstakes.name)
+        #
+        # print(my_manager.manager.stack.stack[0].name)
+        # print(my_manager.manager.stack.stack[1].name)
+        # # print(my_manager.manager.stack.stack[2].name)
 
-    # contestant1 = Contestant()
-    # contestant1.fill_contestant_info()
-    # display_contestant_info(contestant1)
-
-    # manager = MarketingFirmCreator().choose_manager_type()
-    # test = manager.create_sweepstakes('test')
-    # manager.stack.insert_sweepstakes(test)
-
-    manager = MarketingFirmCreator()
-    my_stack_man = manager.choose_manager_type()
-    new_stakes = my_stack_man.create_sweepstakes('stake test')
-
-    contestant1 = Contestant()
-    contestant1.fill_contestant_info()
-    new_stakes.print_contestant_info(contestant1)
-    new_stakes.register_contestant(contestant1)
-
-    contestant2 = Contestant()
-    contestant2.fill_contestant_info()
-    new_stakes.print_contestant_info(contestant2)
-    new_stakes.register_contestant(contestant2)
-
-    winner = new_stakes.pick_winner()
-
-    print(winner.first_name)
+    def run_simulation():
+        my_manager = MarketingFirmCreator().choose_manager_type()
+        """Creates new sweepstakes"""
+        while True:
+            new_sweepstakes = my_manager.create_sweepstakes('test')
+            print(new_sweepstakes)
+            my_manager.manager.insert_sweepstakes(new_sweepstakes)
+            break
+            # print("Contestant registered")
 
 
-    # print(new_stakes.contestants[contestant1.reg_num].first_name)
-    # print(new_stakes.contestants[contestant2.reg_num].first_name)
+    run_simulation()

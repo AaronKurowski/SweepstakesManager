@@ -1,5 +1,4 @@
 from data_queue import Queue
-import random
 
 
 class SweepstakesQueueManager:

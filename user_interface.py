@@ -1,9 +1,10 @@
-from sweepstakesstackmanager import SweepstakesStackManager
-from sweepstakesqueuemanager import SweepstakesQueueManager
-
-
 def output_text(text):
     print(text)
+
+
+def continue_prompt():
+    continue_bool = input("All done? Continue to next step? (y/n)")
+    return continue_bool
 
 
 def contestant_info_prompt():
@@ -22,7 +23,38 @@ def display_contestant_info(contestant):
 
 def manager_type_prompt():
     pick_manager = input("Stack or Queue manager? >")
-    if pick_manager.lower() == 'stack':
-        return SweepstakesStackManager()
-    else:
-        return SweepstakesQueueManager()
+    try:
+        if pick_manager.lower() == 'stack':
+            return 'stack'
+        elif pick_manager.lower() == 'queue':
+            return 'queue'
+    except:
+        print("Type again")
+
+
+def menu_facade():
+    my_manager = MarketingFirmCreator().choose_manager_type()
+    """Create your sweepstakes"""
+    while True:
+        new_sweepstakes = my_manager.manager.create_sweepstakes()
+        my_manager.manager.insert_sweepstakes(new_sweepstakes)
+
+        while True:
+            contestant = Contestant()
+            contestant.fill_contestant_info()
+            new_sweepstakes.register_contestant(contestant)
+            print("contestant registered!")
+            add_more_contestants = continue_prompt()
+            if add_more_contestants.lower() == 'y' or 'yes':
+                continue
+            else:
+                break
+        add_another_sweepstakes = continue_prompt()
+        if add_another_sweepstakes.lower() == 'y' or 'yes':
+            continue
+        else:
+            break
+
+def get_sweepstakes_name():
+    name = input("Name your sweepstakes >")
+    return name

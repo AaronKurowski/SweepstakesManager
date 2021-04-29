@@ -1,5 +1,7 @@
-from user_interface import *
 from marketingfirm import MarketingFirm
+from user_interface import manager_type_prompt
+from sweepstakesstackmanager import SweepstakesStackManager
+from sweepstakesqueuemanager import SweepstakesQueueManager
 
 
 class MarketingFirmCreator:
@@ -8,4 +10,7 @@ class MarketingFirmCreator:
 
     def choose_manager_type(self):
         choice = manager_type_prompt()
-        return MarketingFirm(choice)
+        if choice == 'stack':
+            return MarketingFirm(SweepstakesStackManager())
+        elif choice == 'queue':
+            return MarketingFirm(SweepstakesQueueManager())
