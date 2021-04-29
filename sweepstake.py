@@ -14,7 +14,7 @@ class Sweepstake:
     def pick_winner(self):
         """Generates a random key in self.contestants and returns object with that key"""
         random_key = random.choice(list(self.contestants))
-        return self.contestants[random_key]
+        return self.contestants.pop(random_key, None)
 
     def print_contestant_info(self, contestant):
         display_contestant_info(contestant)
