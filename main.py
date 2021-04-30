@@ -32,14 +32,11 @@ if __name__ == '__main__':
 
         select_winner = select_winner_prompt()
         while select_winner:
-            selected_sweepstakes = my_manager.manager.get_sweepstakes()
-            winner = selected_sweepstakes.pick_winner()
-            winner.notify(winner, selected_sweepstakes)
-            if selected_sweepstakes is None:
-                print("No more sweepstakes")
-                select_winner = False
-            else:
-                continue
-
+            try:
+                selected_sweepstakes = my_manager.manager.get_sweepstakes()
+                winner = selected_sweepstakes.pick_winner()
+                winner.notify(winner, selected_sweepstakes)
+            except AttributeError:
+                break
 
     run_simulation()

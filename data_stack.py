@@ -7,4 +7,7 @@ class Stack:
         self.stack.append(item)
 
     def pop(self):
-        return self.stack.pop(-1)
+        try:
+            return self.stack.pop(-1)
+        except IndexError:
+            return

@@ -1,3 +1,6 @@
+import smtplib
+
+
 def output_text(text):
     print(text)
 
@@ -43,3 +46,24 @@ def manager_type_prompt():
 def get_sweepstakes_name():
     name = input("Name your sweepstakes >")
     return name
+
+
+
+def send_email(contestants):
+    sender = 'sweepstakesManager@domain.com'
+    receivers = []
+    for contestant in contestants:
+        contestant.email += receivers
+
+    message = f"""From: From Person <sweepstakesManager@domain.com>
+                    To: To Person <{receivers}>
+                    Subject: TESTING 123
+
+                    This is a test"""
+
+    try:
+        smtp_obj = smtplib.SMTP('localhost')
+        smtp_obj.sendmail(sender, receivers, message)
+        print("email successful")
+    except smtplib.SMTPException:
+        print("Error: email not sent")

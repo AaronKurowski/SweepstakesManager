@@ -1,4 +1,4 @@
-from user_interface import *
+from user_interface import contestant_info_prompt
 
 
 class Contestant:

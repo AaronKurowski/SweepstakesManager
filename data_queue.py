@@ -7,4 +7,7 @@ class Queue:
         self.queue.append(item)
 
     def dequeue(self):
-        return self.queue.pop(0)
+        try:
+            return self.queue.pop(0)
+        except IndexError:
+            return
